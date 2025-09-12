@@ -1,0 +1,419 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background: #060A0D;
+  color: #A47F6F;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  position: relative; 
+  top: 0;
+  width: 100%;
+  background: transparent; 
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 
+    2px 2px 4px rgba(0,0,0,0.5),
+    4px 4px 8px rgba(0,0,0,0.3);
+
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  line-height: 2.5;
+  letter-spacing: 0;
+
+  position: absolute;
+  top: 0;
+  left: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;  /* 🔽 moves text lower */
+  padding-bottom: 50px;       /* 🔽 adjust spacing */
+  z-index: 1000;
+}
+
+
+/* Nav Links Horizontal Alignment Next to Logo - UPDATED SIZE & SPACING */
+header .nav-links {
+  display: flex;
+  align-items: center;   /* vertically center with logo */
+  gap: 35px;             /* increased space between links/icons */
+}
+
+header .nav-links li a {
+  display: flex;
+  align-items: center;   /* center icon & text */
+  gap: 15px;             /* increased space between icon and text */
+  color: #ffffff;        /* text white */
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Lora', serif;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;     /* slightly larger text */
+}
+
+header .nav-links li a img {
+  width: 28px;           /* larger icon */
+  height: 28px;
+  filter: brightness(1); /* white icons */
+}
+
+header .nav-links li a:hover {
+  color: #C5630C;        
+  text-shadow: 0 0 6px rgba(197,99,12,0.6);
+  filter: brightness(1.2); /* icon brighten on hover */
+}
+
+
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Hero Background with Dark Overlay */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* show full image */
+  object-position: left; /* shift image to the left */
+  background-color: black; /* fill empty space */
+}
+
+.hero-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* dark overlay for text readability */
+  z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+  position: absolute; /* absolute keeps it perfectly centered */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* center vertically & horizontally */
+  z-index: 2;
+}
+
+.hero-logo {
+  max-width: 150px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  color: #C5630C;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(197,99,12,0.8);
+  white-space: nowrap; /* prevents wrapping */
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  color: #A47F6F;
+  margin-bottom: 25px;
+  font-family: 'Lora', serif;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content .btn {
+  background: #C5630C;
+  color: #060A0D;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(197,99,12,0.5);
+  font-family: 'Lora', serif;
+}
+
+.hero-content .btn:hover {
+  background: #A47F6F;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(164,127,111,0.6);
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 40px 0 20px;
+  color: #C5630C;
+  padding: 6px 16px;
+  border: 1.5px solid #C5630C;
+  border-radius: 6px;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 0 0 3px rgba(197,99,12,0.5);
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: #1A1F24;
+  padding: 20px;
+  border: 1.5px solid #415057;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(65,80,87,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(197,99,12,0.3);
+}
+
+.card h3 {
+  color: #A47F6F;
+  margin-bottom: 10px;
+  font-family: 'Playfair Display', serif;
+}
+
+.card p {
+  color: #BE8450;
+  font-size: 0.95rem;
+  font-family: 'Lora', serif;
+}
+
+#services .card img, #portfolio .card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;  /* ✅ show whole picture */
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: #000; /* fill empty space with black */
+}
+
+#services .card:hover img, #portfolio .card:hover img {
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+#contact {
+  padding: 80px 20px;
+  background: #060A0D;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.contact-cards .card {
+  background: #33353A;
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  border: 1.5px solid #415057;
+  text-align: center;
+}
+
+.contact-cards .card h3 {
+  margin-bottom: 15px;
+  color: #A47F6F;
+  font-family: 'Playfair Display', serif;
+}
+
+.contact-cards .card p, .contact-cards .card a {
+  color: #BE8450;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-family: 'Lora', serif;
+}
+
+/* Footer */
+footer {
+  background: #415057;
+  padding: 20px;
+  text-align: center;
+  color: #A47F6F;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+  font-family: 'Lora', serif;
+}
+
+/* Hero Socials (unchanged) */
+.hero-socials {
+  position: absolute;
+  top: 50%;
+  right: 30px; 
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 100;
+}
+
+.hero-socials a img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* Makes them white if dark */
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hero-socials a img:hover {
+  transform: scale(1.2);
+  opacity: 0.7;
+}
+
+/* Lightbox Background */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Lightbox Image */
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 3px solid #C5630C;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(197, 99, 12, 0.6);
+}
+
+/* Close Button */
+.lightbox:after {
+  content: "✕";
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Stronger enlarge effect on hover */
+#services .card img, #portfolio .card img {
+  transition: transform 0.4s ease; /* smooth animation */
+}
+
+#services .card:hover img, #portfolio .card:hover img {
+  transform: scale(1.2); /* make it bigger on hover */
+}
+/* Move nav links to the right */
+header .nav-links {
+  margin-left: auto;   /* pushes them fully to the right */
+  justify-content: flex-end;
+}
+header .nav-links i {
+  font-size: 22px;          /* icon size */
+  margin-right: 10px;       /* space between icon and text */
+  color: #ffffff;           /* white icons */
+  transition: 0.3s ease;
+}
+
+header .nav-links li a:hover i {
+  color: #C5630C;           /* orange on hover */
+  transform: scale(1.2);    /* enlarge on hover */
+}
+header .logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff; 
+  font-family: 'Playfair Display', serif;
+  writing-mode: vertical-rl; 
+  text-orientation: upright;
+
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  height: calc(100vh - 50px);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+
+  /* main shadow base */
+  text-shadow:
+    1px 1px 0 rgba(255,255,255,0.1),
+    2px 2px 0 rgba(255,255,255,0.08),
+    3px 3px 0 rgba(255,255,255,0.06),
+    4px 4px 0 rgba(255,255,255,0.04),
+    5px 5px 0 rgba(255,255,255,0.02);
+}
+
+/* Extra duplicated fading text using ::after */
+header .logo::after {
+  content: "YOU ART DESIGN";
+  position: absolute;
+  color: #ffffff;
+  top: 2px;   /* small offset from original */
+  left: 2px;
+  opacity: 0.1; 
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  z-index: -1; /* behind original text */
+  filter: blur(1px);
+}
+.logo img {
+  height: 600px;   /* bigger, closer to text height */
+  vertical-align: middle;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.5)); /* soft glow */
+}

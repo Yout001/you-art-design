@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Portfolio - You Art Design</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background: #060A0D;
+      color: #A47F6F;
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      background: #1A1F24;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      color: #C5630C;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #A47F6F;
+      text-decoration: none;
+    }
+
+    /* Portfolio Section */
+    #portfolio {
+      padding: 120px 20px 80px 20px; /* top padding to avoid header overlap */
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 50px;
+      color: #C5630C;
+      border: 2px solid #C5630C;
+      display: inline-block;
+      padding: 6px 15px;
+      border-radius: 8px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #333;
+      border: 3px solid #C5630C;
+      box-shadow: 0 4px 10px rgba(197, 99, 12, 0.3);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .card-title {
+      position: absolute;
+      color: #A47F6F;
+      font-size: 0.9rem;
+      text-align: center;
+      font-weight: bold;
+      padding: 5px 10px;
+      bottom: 10px;
+      width: 100%;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(197, 99, 12, 0.5);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">You Art Design</div>
+    <ul class="nav-links">
+      <li><a href="index.html#hero">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2 class="section-title">Interior Works</h2>
+    <div class="cards">
+
+      <div class="card">
+        <img src="Images/Modern kitchen.png" alt="Luxury Living Room">
+        <div class="card-title">Luxury Living Room</div>
+      </div>
+
+      <div class="card">
+        <img src="Images/bedroom.jpg" alt="Elegant Bedroom">
+        <div class="card-title">Elegant Bedroom</div>
+      </div>
+
+      <div class="card">
+        <img src="Images/terasse .png" alt="Modern Kitchen">
+        <div class="card-title">Modern Kitchen</div>
+      </div>
+
+      <div class="card">
+        <img src="Images/photo_2025-03-09_22-30-27.jpg" alt="Cozy Lounge">
+        <div class="card-title">Cozy Lounge</div>
+      </div>
+
+      <div class="card">
+        <img src="Images/interior1.jpg" alt="Stylish Bathroom">
+        <div class="card-title">Stylish Bathroom</div>
+      </div>
+
+      <div class="card">
+        <img src="Images/photo_2025-02-16_23-57-10 (4).jpg" alt="Minimalist Workspace">
+        <div class="card-title">Minimalist Workspace</div>
+      </div>
+
+    </div>
+  </section>
+
+   <!-- Footer -->
+  <footer style="text-align:center; padding:20px; background:#1A1F24; color:#A47F6F;">
+    <p>© 2025 You Art Design | Follow us on 
+      <a href="https://instagram.com/you.art.design" target="_blank">Instagram</a>
+    </p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Expanded view">
+  </div>
+
+  <!-- Lightbox Script -->
+  <script>
+    const cards = document.querySelectorAll('.card img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = card.src;
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
+
