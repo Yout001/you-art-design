@@ -16,7 +16,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Header */
+/* ===================== */
+/* HEADER */
+/* ===================== */
 header {
   position: relative; 
   top: 0;
@@ -44,49 +46,92 @@ header .logo {
   letter-spacing: 0;
 
   position: absolute;
-  top: 0;
+  top: 50px;
   left: 20px;
-  height: 100vh;
+  height: calc(100vh - 50px);
   display: flex;
-  justify-content: flex-end;  /* 🔽 moves text lower */
-  padding-bottom: 50px;       /* 🔽 adjust spacing */
+  align-items: center;
   z-index: 1000;
+
+  /* subtle text-shadow layers */
+  text-shadow:
+    1px 1px 0 rgba(255,255,255,0.1),
+    2px 2px 0 rgba(255,255,255,0.08),
+    3px 3px 0 rgba(255,255,255,0.06),
+    4px 4px 0 rgba(255,255,255,0.04),
+    5px 5px 0 rgba(255,255,255,0.02);
 }
 
+header .logo::after {
+  content: "YOU ART DESIGN";
+  position: absolute;
+  color: #ffffff;
+  top: 2px;
+  left: 2px;
+  opacity: 0.1; 
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  z-index: -1;
+  filter: blur(1px);
+}
 
-/* Nav Links Horizontal Alignment Next to Logo - UPDATED SIZE & SPACING */
+.logo img {
+  height: 600px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.5));
+}
+
+/* Nav Links */
 header .nav-links {
   display: flex;
-  align-items: center;   /* vertically center with logo */
-  gap: 35px;             /* increased space between links/icons */
+  align-items: center;
+  gap: 35px;
+  margin-left: auto;
+  justify-content: flex-end;
 }
 
 header .nav-links li a {
   display: flex;
-  align-items: center;   /* center icon & text */
-  gap: 15px;             /* increased space between icon and text */
-  color: #ffffff;        /* text white */
+  align-items: center;
+  gap: 15px;
+  color: #ffffff;
   font-weight: 600;
   text-decoration: none;
   font-family: 'Lora', serif;
   transition: all 0.3s ease;
-  font-size: 1.1rem;     /* slightly larger text */
+  font-size: 1.1rem;
 }
 
 header .nav-links li a img {
-  width: 28px;           /* larger icon */
+  width: 28px;
   height: 28px;
-  filter: brightness(1); /* white icons */
+  filter: brightness(1);
 }
 
 header .nav-links li a:hover {
   color: #C5630C;        
   text-shadow: 0 0 6px rgba(197,99,12,0.6);
-  filter: brightness(1.2); /* icon brighten on hover */
+  filter: brightness(1.2);
 }
 
+header .nav-links i {
+  font-size: 22px;
+  margin-right: 10px;
+  color: #ffffff;
+  transition: 0.3s ease;
+}
 
-/* Hero Section */
+header .nav-links li a:hover i {
+  color: #C5630C;
+  transform: scale(1.2);
+}
+
+/* ===================== */
+/* HERO */
+/* ===================== */
 #hero {
   position: relative;
   height: 100vh;
@@ -98,7 +143,6 @@ header .nav-links li a:hover {
   overflow: hidden;
 }
 
-/* Hero Background with Dark Overlay */
 .hero-background {
   position: absolute;
   top: 0;
@@ -112,9 +156,9 @@ header .nav-links li a:hover {
 .hero-background img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* show full image */
-  object-position: left; /* shift image to the left */
-  background-color: black; /* fill empty space */
+  object-fit: contain;
+  object-position: left;
+  background-color: black;
 }
 
 .hero-background::after {
@@ -124,25 +168,22 @@ header .nav-links li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5); /* dark overlay for text readability */
+  background: rgba(0,0,0,0.5);
   z-index: 1;
 }
 
-/* Hero Content */
 .hero-content {
-  position: absolute; /* absolute keeps it perfectly centered */
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* center vertically & horizontally */
+  transform: translate(-50%, -50%);
   z-index: 2;
 }
 
 .hero-logo {
   max-width: 150px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .hero-content h1 {
@@ -151,7 +192,7 @@ header .nav-links li a:hover {
   font-family: 'Playfair Display', serif;
   margin-bottom: 20px;
   text-shadow: 0 0 10px rgba(197,99,12,0.8);
-  white-space: nowrap; /* prevents wrapping */
+  white-space: nowrap;
 }
 
 .hero-content p {
@@ -180,7 +221,33 @@ header .nav-links li a:hover {
   box-shadow: 0 0 15px rgba(164,127,111,0.6);
 }
 
-/* Section Titles */
+/* Hero Socials */
+.hero-socials {
+  position: absolute;
+  top: 50%;
+  right: 30px; 
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 100;
+}
+
+.hero-socials a img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hero-socials a img:hover {
+  transform: scale(1.2);
+  opacity: 0.7;
+}
+
+/* ===================== */
+/* SECTIONS */
+/* ===================== */
 .section-title {
   font-size: 2.2rem;
   font-weight: 700;
@@ -230,20 +297,25 @@ header .nav-links li a:hover {
   font-family: 'Lora', serif;
 }
 
-#services .card img, #portfolio .card img {
+#services .card img,
+#portfolio .card img {
   width: 100%;
   height: 250px;
-  object-fit: contain;  /* ✅ show whole picture */
+  object-fit: contain;
   border-radius: 8px;
   margin-bottom: 15px;
-  background-color: #000; /* fill empty space with black */
+  background-color: #000;
+  transition: transform 0.4s ease;
 }
 
-#services .card:hover img, #portfolio .card:hover img {
-  transform: scale(1.05);
+#services .card:hover img,
+#portfolio .card:hover img {
+  transform: scale(1.2);
 }
 
-/* Contact Section */
+/* ===================== */
+/* CONTACT */
+/* ===================== */
 #contact {
   padding: 80px 20px;
   background: #060A0D;
@@ -274,14 +346,17 @@ header .nav-links li a:hover {
   font-family: 'Playfair Display', serif;
 }
 
-.contact-cards .card p, .contact-cards .card a {
+.contact-cards .card p,
+.contact-cards .card a {
   color: #BE8450;
   text-decoration: none;
   margin-bottom: 10px;
   font-family: 'Lora', serif;
 }
 
-/* Footer */
+/* ===================== */
+/* FOOTER */
+/* ===================== */
 footer {
   background: #415057;
   padding: 20px;
@@ -292,31 +367,9 @@ footer {
   font-family: 'Lora', serif;
 }
 
-/* Hero Socials (unchanged) */
-.hero-socials {
-  position: absolute;
-  top: 50%;
-  right: 30px; 
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  z-index: 100;
-}
-
-.hero-socials a img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0) invert(1); /* Makes them white if dark */
-  transition: transform 0.3s, opacity 0.3s;
-}
-
-.hero-socials a img:hover {
-  transform: scale(1.2);
-  opacity: 0.7;
-}
-
-/* Lightbox Background */
+/* ===================== */
+/* LIGHTBOX */
+/* ===================== */
 .lightbox {
   display: none;
   position: fixed;
@@ -328,7 +381,6 @@ footer {
   align-items: center;
 }
 
-/* Lightbox Image */
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
@@ -337,7 +389,6 @@ footer {
   box-shadow: 0 8px 25px rgba(197, 99, 12, 0.6);
 }
 
-/* Close Button */
 .lightbox:after {
   content: "✕";
   position: absolute;
@@ -347,175 +398,10 @@ footer {
   cursor: pointer;
 }
 
-/* Stronger enlarge effect on hover */
-#services .card img, #portfolio .card img {
-  transition: transform 0.4s ease; /* smooth animation */
-}
-
-#services .card:hover img, #portfolio .card:hover img {
-  transform: scale(1.2); /* make it bigger on hover */
-}
-/* Move nav links to the right */
-header .nav-links {
-  margin-left: auto;   /* pushes them fully to the right */
-  justify-content: flex-end;
-}
-header .nav-links i {
-  font-size: 22px;          /* icon size */
-  margin-right: 10px;       /* space between icon and text */
-  color: #ffffff;           /* white icons */
-  transition: 0.3s ease;
-}
-
-header .nav-links li a:hover i {
-  color: #C5630C;           /* orange on hover */
-  transform: scale(1.2);    /* enlarge on hover */
-}
-header .logo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff; 
-  font-family: 'Playfair Display', serif;
-  writing-mode: vertical-rl; 
-  text-orientation: upright;
-
-  position: absolute;
-  top: 50px;
-  left: 20px;
-  height: calc(100vh - 50px);
-  display: flex;
-  align-items: center;
-  z-index: 1000;
-
-  /* main shadow base */
-  text-shadow:
-    1px 1px 0 rgba(255,255,255,0.1),
-    2px 2px 0 rgba(255,255,255,0.08),
-    3px 3px 0 rgba(255,255,255,0.06),
-    4px 4px 0 rgba(255,255,255,0.04),
-    5px 5px 0 rgba(255,255,255,0.02);
-}
-
-/* Extra duplicated fading text using ::after */
-header .logo::after {
-  content: "YOU ART DESIGN";
-  position: absolute;
-  color: #ffffff;
-  top: 2px;   /* small offset from original */
-  left: 2px;
-  opacity: 0.1; 
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 2rem;
-  z-index: -1; /* behind original text */
-  filter: blur(1px);
-}
-.logo img {
-  height: 600px;   /* bigger, closer to text height */
-  vertical-align: middle;
-  filter: drop-shadow(0 0 6px rgba(255,255,255,0.5)); /* soft glow */
-}
-/* ===================== */
-/* MOBILE / RESPONSIVE FIXES */
-/* ===================== */
-@media (max-width: 768px) {
-
-  /* Header */
-  header {
-    flex-direction: column;
-    padding: 15px 20px;
-    align-items: flex-start;
-  }
-
-  header .logo {
-    writing-mode: horizontal-tb;
-    text-orientation: initial;
-    height: auto;
-    top: 0;
-    left: 0;
-    padding: 0;
-    font-size: 1.5rem;
-    display: block;
-  }
-
-  .logo img {
-    height: auto;
-    max-width: 150px;
-  }
-
-  header .nav-links {
-    flex-direction: column;
-    width: 100%;
-    margin-left: 0;
-    gap: 15px;
-    text-align: left;
-  }
-
-  /* Hero */
-  #hero {
-    height: auto;
-    padding: 100px 20px 50px;
-  }
-
-  .hero-background img {
-    object-fit: cover;
-    height: auto;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-    white-space: normal;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .hero-logo {
-    max-width: 120px;
-  }
-
-  .hero-socials {
-    position: static;
-    transform: none;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-  /* Cards */
-  .cards {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0 10px;
-  }
-
-  #services .card img,
-  #portfolio .card img {
-    height: auto;
-  }
-
-  /* Contact */
-  .contact-cards {
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 10px;
-  }
-
-  .contact-cards .card {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px;
-  }
-}
 /* ===================== */
 /* RESPONSIVE FIXES */
 /* ===================== */
 @media (max-width: 1024px) {
-  /* Tablet adjustments */
   .hero-content h1 { font-size: 2.5rem; }
   .hero-content p { font-size: 1.1rem; }
   .cards { grid-template-columns: repeat(2, 1fr); }
@@ -536,6 +422,7 @@ header .logo::after {
     font-size: 1.6rem;
     margin-bottom: 10px;
     display: block;
+    height: auto;
   }
 
   .logo img {
@@ -563,18 +450,14 @@ header .logo::after {
     height: auto;
   }
 
-  .hero-logo {
-    max-width: 120px;
-  }
+  .hero-logo { max-width: 120px; }
 
   .hero-content h1 {
     font-size: 2rem;
     white-space: normal;
   }
 
-  .hero-content p {
-    font-size: 1rem;
-  }
+  .hero-content p { font-size: 1rem; }
 
   .hero-socials {
     position: static;
@@ -619,18 +502,7 @@ header .logo::after {
 }
 
 @media (max-width: 480px) {
-  /* Small phones */
   .hero-content h1 { font-size: 1.5rem; }
   .hero-content p { font-size: 0.9rem; }
   .btn { padding: 10px 20px; font-size: 0.9rem; }
-}
-@media (max-width: 768px) {
-  body {
-    background: red !important;
-  }
-}
-@media (max-width: 768px) {
-  body {
-    background: red !important;
-  }
 }
