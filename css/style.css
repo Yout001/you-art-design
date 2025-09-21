@@ -580,3 +580,76 @@ footer {
     height: 28px;
   }
 }
+/* ====== Responsive Fix: Keep PC structure, smaller pictures ====== */
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 15px;
+  }
+
+  header .logo img {
+    max-width: 90px; /* smaller logo */
+    height: auto;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+    padding: 3px;
+  }
+
+  /* Hero Section */
+  #hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .hero-background img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* show full image */
+  }
+
+  .hero-logo {
+    max-width: 120px; /* smaller hero logo */
+    margin: 10px auto;
+  }
+
+  .hero-content h1 {
+    font-size: 20px; /* smaller heading */
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .hero-content .btn {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+
+  /* Hero Socials */
+  .hero-socials {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    display: flex;
+    flex-direction: column; /* keep same style as PC */
+    gap: 8px;
+  }
+
+  .hero-socials img {
+    width: 24px;
+    height: 24px;
+  }
+}
