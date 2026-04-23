@@ -1,63 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* Hero Typing Animation */
+  /* ================= HERO TYPING ================= */
   const heroText = document.querySelector('.hero-content h1');
-  const fullText = "Designing Dreams into Reality";
+  const fullText = "Yahya Outkoumit";
   let index = 0;
-  heroText.textContent = "";
-  function typeEffect() {
-    if(index <= fullText.length){
-      heroText.innerHTML = fullText.substring(0,index)+'<span class="cursor">|</span>';
-      index++;
-      setTimeout(typeEffect,100);
-    }
-  }
-  typeEffect();
 
-  /* Hero Bubbles */
-  const hero = document.querySelector('#hero');
-  if(hero){
-    for(let i=0;i<15;i++){
-      const bubble = document.createElement('div');
-      bubble.classList.add('bubble');
-      bubble.style.left=Math.random()*100+'vw';
-      bubble.style.width=bubble.style.height=(10+Math.random()*30)+'px';
-      bubble.style.animationDuration=(5+Math.random()*5)+'s';
-      hero.appendChild(bubble);
+  if(heroText){
+    heroText.textContent = "";
+    function typeEffect() {
+      if (index <= fullText.length) {
+        heroText.innerHTML =
+          fullText.substring(0, index) +
+          '<span class="cursor">|</span>';
+        index++;
+        setTimeout(typeEffect, 80);
+      }
     }
+    typeEffect();
   }
 
-  /* Smooth scrolling */
-  document.querySelectorAll('.nav-links a').forEach(link=>{
-    link.addEventListener('click', e=>{
+  /* ================= SMOOTH SCROLL ================= */
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', e => {
       e.preventDefault();
-      const target=document.querySelector(link.getAttribute('href'));
-      if(target) window.scrollTo({top:target.offsetTop-70, behavior:'smooth'});
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 70,
+          behavior: 'smooth'
+        });
+      }
     });
   });
 
-  /* Back-to-top + Progress Bar */
-  const backTop=document.createElement('button');
-  backTop.id='backTop'; backTop.textContent='↑';
+  /* ================= BACK TO TOP ================= */
+  const backTop = document.createElement('button');
+  backTop.id = 'backTop';
+  backTop.innerHTML = '↑';
   document.body.appendChild(backTop);
-  backTop.addEventListener('click',()=>window.scrollTo({top:0, behavior:'smooth'}));
 
-  const progress=document.createElement('div'); progress.id='progressBar';
+  backTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ================= PROGRESS BAR ================= */
+  const progress = document.createElement('div');
+  progress.id = 'progressBar';
   document.body.appendChild(progress);
 
-  window.addEventListener('scroll', ()=>{
-    const scrollPercent=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
-    progress.style.width=scrollPercent+'%';
-    backTop.style.display=window.scrollY>300?'block':'none';
+  window.addEventListener('scroll', () => {
+    const scrollPercent =
+      (window.scrollY /
+        (document.body.scrollHeight - window.innerHeight)) * 100;
+
+    progress.style.width = scrollPercent + '%';
+
+    backTop.style.opacity = window.scrollY > 300 ? '1' : '0';
   });
 
-  /* Fade-in Sections */
-  const faders=document.querySelectorAll('.section, .card, .contact-cards');
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting) entry.target.classList.add('appear');
+  /* ================= SCROLL ANIMATIONS ================= */
+  const elements = document.querySelectorAll('.card, section h2, .about-text');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('appear');
+      }
     });
-  }, {threshold:0.2});
-  faders.forEach(f=>observer.observe(f));
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
 
 });
