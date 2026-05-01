@@ -138,7 +138,7 @@ section {
 
 .split-img {
   flex: 1;
-  background: url("../Images/interior1.jpg") center/cover no-repeat;
+  background: url("../Images/kitchen.png") center/cover no-repeat;
 }
 
 .split-content {
