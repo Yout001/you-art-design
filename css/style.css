@@ -21,12 +21,19 @@ header {
   align-items: center;
   background: rgba(12,18,29,0.6);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
   z-index: 1000;
 }
 
 .logo {
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   letter-spacing: 2px;
+}
+
+.logo img {
+  width: 40px;
 }
 
 .nav-links {
@@ -35,8 +42,8 @@ header {
 }
 
 .nav-links li a {
-  color: white;
   margin-left: 30px;
+  color: white;
   text-decoration: none;
 }
 
@@ -46,46 +53,72 @@ header {
 
 /* HERO */
 #hero {
-  height: 100vh;
-  background: url("../Images/villa.jpg") center/cover no-repeat;
   display: flex;
-  align-items: center;
+  height: 100vh;
+}
+
+/* LEFT */
+.hero-left {
+  flex: 1;
+  background: #0c121d;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  position: relative;
+  padding: 80px;
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3), #0c121d);
+.hero-left .tag {
+  color: #D4A762;
+  margin-bottom: 10px;
 }
 
-.hero-content {
-  position: relative;
-  text-align: center;
+.hero-left h1 {
+  font-size: 64px;
+  line-height: 1.2;
 }
 
-.hero-content h1 {
-  font-size: 70px;
+.hero-left h1 span {
+  color: #D4A762;
 }
 
-.hero-content p {
+.hero-left p {
   margin: 20px 0;
   color: #ccc;
+}
+
+/* RIGHT */
+.hero-right {
+  flex: 1;
+  background: url("../Images/villa.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.hero-right::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.7), transparent);
 }
 
 /* BUTTON */
 .btn {
   background: linear-gradient(135deg, #D4A762, #B8914F);
   color: black;
-  padding: 12px 30px;
-  border-radius: 8px;
+  padding: 14px 35px;
+  border-radius: 10px;
   text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(212,167,98,0.4);
 }
 
 /* SECTION */
 section {
-  padding: 140px 80px;
+  padding: 160px 100px;
   text-align: center;
 }
 
@@ -102,33 +135,20 @@ section {
 }
 
 .card {
-  position: relative;
-  overflow: hidden;
   border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s;
 }
 
 .card img {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  transition: 0.4s;
 }
 
-.card:hover img {
-  transform: scale(1.1);
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  opacity: 0;
-  transition: 0.3s;
-}
-
-.card:hover::after {
-  opacity: 1;
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 /* SPLIT */
@@ -143,13 +163,11 @@ section {
 
 .split-content {
   flex: 1;
-  padding: 60px;
-  background: #0c121d;
+  padding: 80px;
   text-align: left;
 }
 
-.split-content input,
-.split-content textarea {
+.split-content input {
   width: 100%;
   margin: 10px 0;
   padding: 12px;
@@ -168,8 +186,8 @@ section {
   width: 100%;
   margin: 10px 0;
   padding: 12px;
-  border-radius: 6px;
   border: none;
+  border-radius: 6px;
 }
 
 /* FOOTER */
@@ -181,6 +199,23 @@ footer {
 
 /* RESPONSIVE */
 @media(max-width: 900px){
+
+  #hero {
+    flex-direction: column;
+  }
+
+  .hero-left {
+    padding: 40px;
+  }
+
+  .hero-left h1 {
+    font-size: 40px;
+  }
+
+  .hero-right {
+    height: 300px;
+  }
+
   .cards {
     grid-template-columns: 1fr 1fr;
   }
