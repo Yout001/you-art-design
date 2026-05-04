@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +10,17 @@ body {
   color: white;
 }
 
+/* PROGRESS BAR */
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #D4A762;
+  width: 0%;
+  z-index: 9999;
+}
+
 /* HEADER */
 header {
   position: fixed;
@@ -19,9 +29,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(12,18,29,0.6);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: rgba(12,18,29,0.7);
+  backdrop-filter: blur(12px);
   z-index: 1000;
 }
 
@@ -29,7 +38,6 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-  letter-spacing: 2px;
 }
 
 .logo img {
@@ -43,8 +51,8 @@ header {
 
 .nav-links li a {
   margin-left: 30px;
-  color: white;
   text-decoration: none;
+  color: white;
 }
 
 .nav-links li a:hover {
@@ -57,36 +65,52 @@ header {
   height: 100vh;
 }
 
-/* LEFT */
 .hero-left {
   flex: 1;
-  background: #0c121d;
+  padding: 90px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 80px;
 }
 
 .hero-left .tag {
   color: #D4A762;
-  margin-bottom: 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
 }
 
 .hero-left h1 {
-  font-size: 64px;
-  line-height: 1.2;
+  font-size: 70px;
+  line-height: 1.1;
 }
 
 .hero-left h1 span {
   color: #D4A762;
 }
 
-.hero-left p {
+.hero-left .desc {
   margin: 20px 0;
   color: #ccc;
+  max-width: 400px;
 }
 
-/* RIGHT */
+/* SOCIAL */
+.socials {
+  margin-top: 40px;
+}
+
+.socials a {
+  margin-right: 15px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.socials a:hover {
+  color: #D4A762;
+}
+
+/* HERO RIGHT */
 .hero-right {
   flex: 1;
   background: url("../Images/villa.jpg") center/cover no-repeat;
@@ -104,90 +128,78 @@ header {
 .btn {
   background: linear-gradient(135deg, #D4A762, #B8914F);
   color: black;
-  padding: 14px 35px;
+  padding: 14px 30px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
+  display: inline-block;
   transition: 0.3s;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(212,167,98,0.4);
 }
 
-/* SECTION */
+/* SECTIONS */
 section {
-  padding: 160px 100px;
+  padding: 140px 90px;
   text-align: center;
 }
 
 .section-title {
-  font-size: 36px;
+  font-size: 38px;
   margin-bottom: 60px;
 }
 
-/* CARDS */
-.cards {
+/* GRID */
+.grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
 
 .card {
-  border-radius: 20px;
   overflow: hidden;
-  transition: 0.4s;
+  border-radius: 18px;
 }
 
 .card img {
   width: 100%;
-  height: 250px;
+  height: 240px;
   object-fit: cover;
+  transition: 0.4s;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+.card:hover img {
+  transform: scale(1.1);
 }
 
-/* SPLIT */
-.split {
+/* STATS */
+.stats {
   display: flex;
-}
-
-.split-img {
-  flex: 1;
-  background: url("../Images/kitchen.png") center/cover no-repeat;
-}
-
-.split-content {
-  flex: 1;
+  justify-content: space-around;
   padding: 80px;
-  text-align: left;
+  background: #111827;
 }
 
-.split-content input {
-  width: 100%;
-  margin: 10px 0;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
+.stats h2 {
+  color: #D4A762;
 }
 
 /* CONTACT */
-.contact-box {
-  max-width: 500px;
-  margin: auto;
+.contact {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-.contact-box input,
-.contact-box textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   margin: 10px 0;
   padding: 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 /* FOOTER */
@@ -212,15 +224,11 @@ footer {
     font-size: 40px;
   }
 
-  .hero-right {
-    height: 300px;
-  }
-
-  .cards {
+  .grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .split {
+  .contact {
     flex-direction: column;
   }
 }
