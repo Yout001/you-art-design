@@ -12,13 +12,14 @@
 
 <body>
 
-<!-- PROGRESS BAR -->
+<div id="cursor"></div>
+<div id="cursor-border"></div>
+
 <div id="progressBar"></div>
 
-<!-- HEADER -->
-<header>
+<header id="header">
   <div class="logo">
-    <img src="Images/Artboard 2.png" alt="logo">
+    <img src="Images/Artboard 2.png">
     <span>You Art Studio</span>
   </div>
 
@@ -30,104 +31,71 @@
   </ul>
 </header>
 
-<!-- HERO -->
 <section id="hero">
 
-  <div class="hero-left">
+  <div class="hero-left reveal">
+    <p class="tag">ARCHITECTURE • INTERIOR • INDUSTRIAL • DESIGN</p>
 
-    <p class="tag">ARCHITECTURE • INTERIOR • Industrial • DESIGN</p>
-
-    <h1>YOU ART<br><span>Designing Ideas Into Reality</span></h1>
+    <h1>
+      <span class="small-title">YOU ART</span><br>
+      Designing Ideas<br>Into Reality
+    </h1>
 
     <p class="desc">
-We create innovative design solutions across interior, exterior, product and industrial spaces with precision and creativity.
+      We create innovative design solutions across interior, exterior, product and industrial spaces with precision and creativity.
     </p>
 
-    <a href="#contact" class="btn">Start Project</a>
+    <a href="#contact" class="btn magnetic">Start Project</a>
 
-    <!-- SOCIAL -->
     <div class="socials">
-      <a href="https://Instagram.com/you.art.design/" target="_blank">Instagram</a>
-      <a href="https://wa.me/" target="_blank">WhatsApp</a>
-      <a href="mailto:Yahyaoutkoumit@gmail.com">Email</a>
-      <a href="https://https://linkedin.com/in/yahya-outkoumit/" target="_blank">LinkedIn</a>
+      <a href="#">Instagram</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">Email</a>
+      <a href="#">LinkedIn</a>
     </div>
-
   </div>
 
-  <div class="hero-right"></div>
+  <div class="hero-right parallax"></div>
 
 </section>
 
-<!-- SERVICES -->
 <section id="services">
-  <h2 class="section-title">Our Services</h2>
+  <h2 class="section-title reveal">Our Services</h2>
 
   <div class="grid">
-
-    <div class="card">
-      <img src="Images/INTERIOR 1.png">
-      <h3>Interior Design</h3>
-    </div>
-
-    <div class="card">
-      <img src="Images/villa 2.jpg">
-      <h3>Exterior Design</h3>
-    </div>
-
-    <div class="card">
-      <img src="Images/pic 5.png">
-      <h3>Industrial Design</h3>
-    </div>
-
-    <div class="card">
-      <img src="Images/product 1.png">
-      <h3>Product Design</h3>
-    </div>
-
+    <div class="card reveal"><img src="Images/INTERIOR 1.png"><h3>Interior</h3></div>
+    <div class="card reveal"><img src="Images/villa 2.jpg"><h3>Exterior</h3></div>
+    <div class="card reveal"><img src="Images/pic 5.png"><h3>Industrial</h3></div>
+    <div class="card reveal"><img src="Images/product 1.png"><h3>Product</h3></div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
-  <div><h2>120+</h2><p>Projects</p></div>
-  <div><h2>80+</h2><p>Clients</p></div>
-  <div><h2>7+</h2><p>Years</p></div>
-  <div><h2>100%</h2><p>Satisfaction</p></div>
-</section>
-
-<!-- PORTFOLIO -->
 <section id="portfolio">
-  <h2 class="section-title">Featured Projects</h2>
+  <h2 class="section-title reveal">Projects</h2>
 
   <div class="grid">
-    <img src="Images/1.png">
-    <img src="Images/2.jpg">
-    <img src="Images/3.png">
-    <img src="Images/Gemini_Generated_Image_n5zcy7n5zcy7n5zc.png">
+    <div class="portfolio-item reveal"><img src="Images/1.png"><span>Interior</span></div>
+    <div class="portfolio-item reveal"><img src="Images/2.jpg"><span>Exterior</span></div>
+    <div class="portfolio-item reveal"><img src="Images/3.png"><span>Industrial</span></div>
+    <div class="portfolio-item reveal"><img src="Images/Gemini_Generated_Image_n5zcy7n5zcy7n5zc.png"><span>Product</span></div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-  <h2 class="section-title">Let’s Work Together</h2>
+  <h2 class="section-title reveal">Let’s Work Together</h2>
 
   <div class="contact">
-
-    <div class="contact-info">
-      <h3>Contact Info</h3>
-      <p>Email: youremail@gmail.com</p>
+    <div class="contact-info reveal">
+      <p>Email: yahyaoutkoumit@gmail.com</p>
       <p>Phone: +212694183482</p>
-      <p>Location: Tangier,Morocco</p>
     </div>
 
-    <div class="contact-form">
-      <input type="text" placeholder="Your Name">
-      <input type="email" placeholder="Your Email">
-      <textarea placeholder="Your Message"></textarea>
-      <button class="btn">Send Message</button>
+    <div class="contact-form reveal">
+      <input type="text" placeholder="Name">
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Message"></textarea>
+      <button class="btn magnetic">Send</button>
     </div>
-
   </div>
 </section>
 
