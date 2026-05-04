@@ -1,74 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
+// CURSOR
+const cursor = document.getElementById("cursor");
+const border = document.getElementById("cursor-border");
 
-  /* ================= HERO TYPING ================= */
-  const heroText = document.querySelector('.hero-content h1');
-  const fullText = "Yahya Outkoumit";
-  let index = 0;
+document.addEventListener("mousemove", e => {
+  cursor.style.top = e.clientY + "px";
+  cursor.style.left = e.clientX + "px";
 
-  if(heroText){
-    heroText.textContent = "";
-    function typeEffect() {
-      if (index <= fullText.length) {
-        heroText.innerHTML =
-          fullText.substring(0, index) +
-          '<span class="cursor">|</span>';
-        index++;
-        setTimeout(typeEffect, 80);
-      }
-    }
-    typeEffect();
+  border.style.top = e.clientY - 10 + "px";
+  border.style.left = e.clientX - 10 + "px";
+});
+
+// PROGRESS
+window.onscroll = () => {
+  let scrollTop = document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.getElementById("progressBar").style.width = (scrollTop / height) * 100 + "%";
+
+  // HEADER BG
+  if(scrollTop > 50){
+    document.getElementById("header").classList.add("scrolled");
+  } else {
+    document.getElementById("header").classList.remove("scrolled");
   }
+};
 
-  /* ================= SMOOTH SCROLL ================= */
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - 70,
-          behavior: 'smooth'
-        });
-      }
-    });
+// REVEAL
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
   });
+});
 
-  /* ================= BACK TO TOP ================= */
-  const backTop = document.createElement('button');
-  backTop.id = 'backTop';
-  backTop.innerHTML = '↑';
-  document.body.appendChild(backTop);
+// PARALLAX
+const parallax = document.querySelector(".parallax");
 
-  backTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  /* ================= PROGRESS BAR ================= */
-  const progress = document.createElement('div');
-  progress.id = 'progressBar';
-  document.body.appendChild(progress);
-
-  window.addEventListener('scroll', () => {
-    const scrollPercent =
-      (window.scrollY /
-        (document.body.scrollHeight - window.innerHeight)) * 100;
-
-    progress.style.width = scrollPercent + '%';
-
-    backTop.style.opacity = window.scrollY > 300 ? '1' : '0';
-  });
-
-  /* ================= SCROLL ANIMATIONS ================= */
-  const elements = document.querySelectorAll('.card, section h2, .about-text');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('appear');
-      }
-    });
-  }, { threshold: 0.2 });
-
-  elements.forEach(el => observer.observe(el));
-
+document.addEventListener("mousemove", (e) => {
+  let x = (window.innerWidth - e.pageX) / 50;
+  let y = (window.innerHeight - e.pageY) / 50;
+  parallax.style.transform = `translate(${x}px, ${y}px)`;
 });
