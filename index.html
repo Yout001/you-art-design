@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You Art Studio Design</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+<title>You Art Studio Design</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
+<!-- PROGRESS BAR -->
+<div id="progressBar"></div>
 
 <!-- HEADER -->
 <header>
   <div class="logo">
     <img src="Images/logo.png" alt="logo">
-    <span>YOU ART STUDIO DESIGN</span>
+    <span>You Art Studio</span>
   </div>
 
   <ul class="nav-links">
@@ -30,15 +34,25 @@
 <section id="hero">
 
   <div class="hero-left">
-    <p class="tag">WELCOME TO YOU ART</p>
+
+    <p class="tag">ARCHITECTURE • INTERIOR • DESIGN</p>
 
     <h1>Luxury Living<br><span>Redefined</span></h1>
 
-    <p>
-      Interior, Exterior & Product Design crafted with elegance.
+    <p class="desc">
+      We create modern architectural and interior experiences with elegance and precision.
     </p>
 
     <a href="#contact" class="btn">Start Project</a>
+
+    <!-- SOCIAL -->
+    <div class="socials">
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://wa.me/" target="_blank">WhatsApp</a>
+      <a href="mailto:youremail@gmail.com">Email</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+
   </div>
 
   <div class="hero-right"></div>
@@ -49,7 +63,7 @@
 <section id="services">
   <h2 class="section-title">Our Services</h2>
 
-  <div class="cards">
+  <div class="grid">
 
     <div class="card">
       <img src="Images/INTERIOR 1.png">
@@ -74,49 +88,54 @@
   </div>
 </section>
 
+<!-- STATS -->
+<section class="stats">
+  <div><h2>120+</h2><p>Projects</p></div>
+  <div><h2>80+</h2><p>Clients</p></div>
+  <div><h2>7+</h2><p>Years</p></div>
+  <div><h2>100%</h2><p>Satisfaction</p></div>
+</section>
+
 <!-- PORTFOLIO -->
 <section id="portfolio">
   <h2 class="section-title">Featured Projects</h2>
 
-  <div class="cards">
-    <div class="card"><img src="Images/1.png"></div>
-    <div class="card"><img src="Images/2.jpg"></div>
-    <div class="card"><img src="Images/3.png"></div>
-    <div class="card"><img src="Images/Gemini_Generated_Image_n5zcy7n5zcy7n5zc.png"></div>
+  <div class="grid">
+    <img src="Images/1.png">
+    <img src="Images/2.jpg">
+    <img src="Images/3.png">
+    <img src="Images/Gemini_Generated_Image_n5zcy7n5zcy7n5zc.png">
   </div>
-</section>
-
-<!-- SPLIT -->
-<section class="split">
-
-  <div class="split-img"></div>
-
-  <div class="split-content">
-    <h2>Modern Interior Experience</h2>
-    <p>We create immersive and elegant environments designed for luxury living.</p>
-
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <button class="btn">Contact</button>
-  </div>
-
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2 class="section-title">Contact Us</h2>
+  <h2 class="section-title">Let’s Work Together</h2>
 
-  <div class="contact-box">
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea placeholder="Your Message"></textarea>
-    <button class="btn">Send Message</button>
+  <div class="contact">
+
+    <div class="contact-info">
+      <h3>Contact Info</h3>
+      <p>Email: youremail@gmail.com</p>
+      <p>Phone: +212694183482</p>
+      <p>Location: Tangier,Morocco</p>
+    </div>
+
+    <div class="contact-form">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your Message"></textarea>
+      <button class="btn">Send Message</button>
+    </div>
+
   </div>
 </section>
 
 <footer>
-  <p>© 2025 You Art Design</p>
+  <p>© 2025 You Art Studio Design</p>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
