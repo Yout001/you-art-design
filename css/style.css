@@ -27,6 +27,7 @@ header {
   padding: 20px 60px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background: rgba(12,18,29,0.7);
   backdrop-filter: blur(12px);
   z-index: 1000;
@@ -42,6 +43,7 @@ header {
   width: 40px;
 }
 
+/* NAV */
 .nav-links {
   display: flex;
   list-style: none;
@@ -204,7 +206,7 @@ section {
   transform: scale(1.1);
 }
 
-/* PORTFOLIO OVERLAY */
+/* PORTFOLIO */
 .portfolio-item {
   position: relative;
   overflow: hidden;
@@ -221,7 +223,6 @@ section {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  color: white;
   opacity: 0;
   transition: 0.3s;
 }
@@ -264,7 +265,7 @@ footer {
   background: #000;
 }
 
-/* REVEAL ANIMATION */
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -276,11 +277,69 @@ footer {
   transform: translateY(0);
 }
 
-/* RESPONSIVE */
+/* ================= MOBILE FIX ================= */
 @media(max-width:900px){
-  #hero { flex-direction: column; }
-  .hero-left { padding: 40px; }
-  .hero-left h1 { font-size: 40px; }
-  .grid { grid-template-columns: 1fr 1fr; }
-  .contact { flex-direction: column; }
+
+  /* HEADER */
+  header {
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* HERO */
+  #hero {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hero-left {
+    padding: 120px 25px 40px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-left h1 {
+    font-size: 36px;
+  }
+
+  .hero-left .desc {
+    max-width: 100%;
+  }
+
+  .hero-right {
+    margin: 20px;
+    height: 250px;
+  }
+
+  /* GRID */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* STATS */
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  /* CONTACT */
+  .contact {
+    flex-direction: column;
+  }
+
+  /* SECTION */
+  section {
+    padding: 80px 20px;
+  }
+
+  /* BUTTON */
+  .btn {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+
 }
