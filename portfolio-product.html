@@ -1,48 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Designs - You Art Design</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product Design | You Art Studio Design</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
-  <header>
-    <div class="logo">You Art Design</div>
-    <ul class="nav-links">
-      <li><a href="index.html#hero">Home</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#portfolio">Portfolio</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-  </header>
 
-  <section id="portfolio">
-    <h2 class="section-title">Product Designs</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="Images/product1.jpg" alt="Product 1">
-        <div class="card-content">
-          <h3>Custom Furniture</h3>
-          <p>Unique, handcrafted furniture tailored to your living spaces.</p>
-        </div>
-      </div>
+<!-- PROGRESS BAR -->
+<div id="progressBar"></div>
 
-      <div class="card">
-        <img src="Images/product2.jpg" alt="Product 2">
-        <div class="card-content">
-          <h3>Modern Table</h3>
-          <p>A blend of functionality and art for contemporary homes.</p>
-        </div>
-      </div>
-      <!-- Add more products -->
+<!-- HEADER -->
+<header>
+
+  <div class="logo">
+    <img src="Images/Artboard 2.png" alt="logo">
+    <span>You Art Studio</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html#hero">Home</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#portfolio">Portfolio</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+
+</header>
+
+<!-- PORTFOLIO -->
+<section class="portfolio-page">
+
+  <p class="tag reveal">
+    PRODUCT • FURNITURE • MODERN • DESIGN
+  </p>
+
+  <h1 class="page-title reveal">
+    Product Design Projects
+  </h1>
+
+  <p class="desc reveal" style="max-width:700px; margin:auto;">
+    Creative product concepts combining functionality, innovation and elegant aesthetics designed for modern lifestyles.
+  </p>
+
+  <!-- GRID -->
+  <div class="grid" style="margin-top:70px;">
+
+    <!-- PROJECT -->
+    <div class="card reveal">
+      <img src="Images/product1.jpg" alt="Custom Furniture">
+      <h3>Custom Furniture</h3>
     </div>
-  </section>
 
-  <footer>
-    <p>© 2025 You Art Design | Follow us on 
-      <a href="https://instagram.com/you.art.design" target="_blank">Instagram</a>
-    </p>
-  </footer>
+    <!-- PROJECT -->
+    <div class="card reveal">
+      <img src="Images/product2.jpg" alt="Modern Table">
+      <h3>Modern Table</h3>
+    </div>
+
+    <!-- PROJECT -->
+    <div class="card reveal">
+      <img src="Images/product 1.png" alt="Luxury Product">
+      <h3>Luxury Product</h3>
+    </div>
+
+    <!-- PROJECT -->
+    <div class="card reveal">
+      <img src="Images/pic 5.png" alt="Creative Concept">
+      <h3>Creative Concept</h3>
+    </div>
+
+    <!-- PROJECT -->
+    <div class="card reveal">
+      <img src="Images/3.png" alt="Modern Furniture">
+      <h3>Modern Furniture</h3>
+    </div>
+
+    <!-- PROJECT -->
+    <div class="card reveal">
+      <img src="Images/Gemini_Generated_Image_n5zcy7n5zcy7n5zc.png" alt="Industrial Product">
+      <h3>Industrial Product</h3>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- STATS -->
+<section class="stats reveal">
+
+  <div>
+    <h2>Creative</h2>
+    <p>Concepts</p>
+  </div>
+
+  <div>
+    <h2>Modern</h2>
+    <p>Furniture</p>
+  </div>
+
+  <div>
+    <h2>Luxury</h2>
+    <p>Products</p>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <p>
+    © 2025 You Art Studio Design
+  </p>
+
+  <div class="socials" style="margin-top:15px;">
+
+    <a href="https://instagram.com/you.art.design/" target="_blank">
+      Instagram
+    </a>
+
+    <a href="https://wa.me/212694183482" target="_blank">
+      WhatsApp
+    </a>
+
+    <a href="mailto:yahyaoutkoumit@gmail.com">
+      Email
+    </a>
+
+    <a href="https://linkedin.com/in/yahya-outkoumit/" target="_blank">
+      LinkedIn
+    </a>
+
+  </div>
+
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <img src="" alt="">
+</div>
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+
+<script>
+
+/* LIGHTBOX */
+const images = document.querySelectorAll('.card img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
+/* REVEAL */
+window.addEventListener('scroll', reveal);
+
+function reveal(){
+
+  const reveals = document.querySelectorAll('.reveal');
+
+  for(let i = 0; i < reveals.length; i++){
+
+    const windowHeight = window.innerHeight;
+    const revealTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 100;
+
+    if(revealTop < windowHeight - revealPoint){
+      reveals[i].classList.add('active');
+    }
+
+  }
+
+}
+
+reveal();
+
+/* PROGRESS BAR */
+window.onscroll = function() {
+
+  let winScroll =
+  document.body.scrollTop ||
+  document.documentElement.scrollTop;
+
+  let height =
+  document.documentElement.scrollHeight -
+  document.documentElement.clientHeight;
+
+  let scrolled = (winScroll / height) * 100;
+
+  document.getElementById("progressBar").style.width =
+  scrolled + "%";
+};
+
+</script>
+
 </body>
 </html>
