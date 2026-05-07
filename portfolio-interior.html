@@ -1,190 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interior Portfolio - You Art Design</title>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    body {
-      background: #060A0D;
-      color: #A47F6F;
-      font-family: 'Playfair Display', serif;
-      margin: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 15px 50px;
-      display: flex;
-      justify-content: space-between;
-      background: #1A1F24;
-      z-index: 1000;
-    }
+<title>Interior Portfolio | You Art Studio Design</title>
 
-    .logo {
-      font-size: 1.8rem;
-      color: #C5630C;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      color: #A47F6F;
-      text-decoration: none;
-    }
-
-    /* Portfolio Section */
-    #portfolio {
-      padding: 120px 20px 80px 20px; /* top padding to avoid header overlap */
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 50px;
-      color: #C5630C;
-      border: 2px solid #C5630C;
-      display: inline-block;
-      padding: 6px 15px;
-      border-radius: 8px;
-    }
-
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .card {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: #333;
-      border: 3px solid #C5630C;
-      box-shadow: 0 4px 10px rgba(197, 99, 12, 0.3);
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-
-    .card-title {
-      position: absolute;
-      color: #A47F6F;
-      font-size: 0.9rem;
-      text-align: center;
-      font-weight: bold;
-      padding: 5px 10px;
-      bottom: 10px;
-      width: 100%;
-    }
-
-    .card:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 25px rgba(197, 99, 12, 0.5);
-    }
-
-  </style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="logo">You Art Design</div>
-    <ul class="nav-links">
-      <li><a href="index.html#hero">Home</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#portfolio">Portfolio</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-  </header>
+<!-- PROGRESS BAR -->
+<div id="progressBar"></div>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2 class="section-title">Interior Works</h2>
-    <div class="cards">
+<!-- HEADER -->
+<header>
 
-      <div class="card">
-        <img src="Images/Modern kitchen.png" alt="Luxury Living Room">
-        <div class="card-title">Luxury Living Room</div>
-      </div>
-
-      <div class="card">
-        <img src="Images/bedroom.jpg" alt="Elegant Bedroom">
-        <div class="card-title">Elegant Bedroom</div>
-      </div>
-
-      <div class="card">
-        <img src="Images/terasse .png" alt="Modern Kitchen">
-        <div class="card-title">Modern Kitchen</div>
-      </div>
-
-      <div class="card">
-        <img src="Images/photo_2025-03-09_22-30-27.jpg" alt="Cozy Lounge">
-        <div class="card-title">Cozy Lounge</div>
-      </div>
-
-      <div class="card">
-        <img src="Images/interior1.jpg" alt="Stylish Bathroom">
-        <div class="card-title">Stylish Bathroom</div>
-      </div>
-
-      <div class="card">
-        <img src="Images/photo_2025-02-16_23-57-10 (4).jpg" alt="Minimalist Workspace">
-        <div class="card-title">Minimalist Workspace</div>
-      </div>
-
-    </div>
-  </section>
-
-   <!-- Footer -->
-  <footer style="text-align:center; padding:20px; background:#1A1F24; color:#A47F6F;">
-    <p>© 2025 You Art Design | Follow us on 
-      <a href="https://instagram.com/you.art.design" target="_blank">Instagram</a>
-    </p>
-  </footer>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <img src="" alt="Expanded view">
+  <div class="logo">
+    <img src="Images/Artboard 2.png" alt="logo">
+    <span>You Art Studio</span>
   </div>
 
-  <!-- Lightbox Script -->
-  <script>
-    const cards = document.querySelectorAll('.card img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
+  <ul class="nav-links">
+    <li><a href="index.html#hero">Home</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#portfolio">Portfolio</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
 
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = card.src;
-      });
-    });
+</header>
 
-    lightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
-  </script>
+<!-- PORTFOLIO -->
+<section class="portfolio-page">
+
+  <p class="tag reveal">
+    INTERIOR • MODERN • LUXURY • DESIGN
+  </p>
+
+  <h1 class="page-title reveal">
+    Interior Design Projects
+  </h1>
+
+  <p class="desc reveal" style="max-width:700px; margin:auto;">
+    Elegant interior concepts blending functionality, atmosphere and luxury aesthetics for modern living experiences.
+  </p>
+
+  <!-- GRID -->
+  <div class="grid" style="margin-top:70px;">
+
+    <!-- PROJECT -->
+    <div class="card reveal">
+      <img src="Images/Modern kitchen.png" alt="Luxury Living Room">
+      <h3>Luxury Living Room</h3>
+    </div>
+
+    <!-- PROJECT -->
+    <div class="card reveal">
+      <img src="Images/bedroom.jpg" alt="Elegant Bedroom">
+      <h3>Elegant Bedroom</h3>
+    </div>
+
+    <!-- PROJECT -->
+    <div class="card reveal">
+      <img src="Images/terasse .png" alt="Modern Kitchen">
+      <h3>Modern Kitchen</h3>
+    </div>
+
+    <!-- PROJECT -->
+    <div class="card reveal">
+      <img src="Images/photo_2025-03-09_22-30-27.jpg" alt="Cozy Lounge">
+      <h3>Cozy Lounge</h3>
+    </div>
+
+    <!-- PROJECT -->
+    <div class="card reveal">
+      <img src="Images/interior1.jpg" alt="Stylish Bathroom">
+      <h3>Stylish Bathroom</h3>
+    </div>
+
+    <!-- PROJECT -->
+    <div class="card reveal">
+      <img src="Images/photo_2025-02-16_23-57-10 (4).jpg" alt="Minimalist Workspace">
+      <h3>Minimalist Workspace</h3>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- STATS STRIP -->
+<section class="stats reveal">
+
+  <div>
+    <h2>Luxury</h2>
+    <p>Interior Concepts</p>
+  </div>
+
+  <div>
+    <h2>Modern</h2>
+    <p>Living Spaces</p>
+  </div>
+
+  <div>
+    <h2>Creative</h2>
+    <p>Atmospheres</p>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <p>
+    © 2025 You Art Studio Design
+  </p>
+
+  <div class="socials" style="margin-top:15px;">
+
+    <a href="https://instagram.com/you.art.design/" target="_blank">
+      Instagram
+    </a>
+
+    <a href="https://wa.me/212694183482" target="_blank">
+      WhatsApp
+    </a>
+
+    <a href="mailto:yahyaoutkoumit@gmail.com">
+      Email
+    </a>
+
+    <a href="https://linkedin.com/in/yahya-outkoumit/" target="_blank">
+      LinkedIn
+    </a>
+
+  </div>
+
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <img src="" alt="">
+</div>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
+
+<script>
+
+/* LIGHTBOX */
+const images = document.querySelectorAll('.card img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
+/* REVEAL */
+window.addEventListener('scroll', reveal);
+
+function reveal(){
+  const reveals = document.querySelectorAll('.reveal');
+
+  for(let i = 0; i < reveals.length; i++){
+
+    const windowHeight = window.innerHeight;
+    const revealTop = reveals[i].getBoundingClientRect().top;
+    const revealPoint = 100;
+
+    if(revealTop < windowHeight - revealPoint){
+      reveals[i].classList.add('active');
+    }
+
+  }
+}
+
+reveal();
+
+/* PROGRESS BAR */
+window.onscroll = function() {
+
+  let winScroll =
+  document.body.scrollTop ||
+  document.documentElement.scrollTop;
+
+  let height =
+  document.documentElement.scrollHeight -
+  document.documentElement.clientHeight;
+
+  let scrolled = (winScroll / height) * 100;
+
+  document.getElementById("progressBar").style.width =
+  scrolled + "%";
+};
+
+</script>
+
 </body>
 </html>
-
